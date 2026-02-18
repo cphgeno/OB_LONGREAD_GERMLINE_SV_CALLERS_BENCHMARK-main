@@ -204,7 +204,16 @@ stages:
         software_environment: "CuteSV"
         repository:
           url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-cutesv.git
-          commit: b56b6b6
+          commit: 9ea4a23
+        parameters:
+          - values: ["--workflow", "linear"]
+          - values: ["--workflow", "graph"]
+      - id: debreak
+        name: "Variant calling with DeBreak"
+        software_environment: "DeBreak"
+        repository:
+          url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-debreak.git
+          commit: 1e9e332
         parameters:
           - values: ["--workflow", "linear"]
           - values: ["--workflow", "graph"]
