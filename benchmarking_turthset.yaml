@@ -217,6 +217,15 @@ stages:
         parameters:
           - values: ["--workflow", "linear"]
           - values: ["--workflow", "graph"]
+      - id: delly2
+        name: "Variant calling with Delly2"
+        software_environment: "Delly2"
+        repository:
+          url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-delly2.git
+          commit: 631ff2d
+        parameters:
+          - values: ["--workflow", "linear"]
+          - values: ["--workflow", "graph"]
     inputs:
       - entries:
         - data.linear.bam
