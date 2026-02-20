@@ -42,7 +42,7 @@ software_environments:
     conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
   DeBreak:
     description: "DeBreak v.1.2.0"
-    apptainer: ./containers/debreak/debreak_1.2__v3.0__.sif
+    apptainer: oras://quay.io/moniagsa/debreak:3.0
     conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
   Delly2:
     description: "Delly2 v1.7.2"
@@ -223,6 +223,15 @@ stages:
         repository:
           url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-delly2.git
           commit: 631ff2d
+        parameters:
+          - values: ["--workflow", "linear"]
+          - values: ["--workflow", "graph"]
+      - id: dysgu
+        name: "Variant calling with Dysgu"
+        software_environment: "Dysgu"
+        repository:
+          url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-dysgu.git
+          commit: 79d960b
         parameters:
           - values: ["--workflow", "linear"]
           - values: ["--workflow", "graph"]
