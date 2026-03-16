@@ -82,7 +82,7 @@ software_environments:
     conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
   Truvari:
     description: "Truvari v5.3.0"
-    apptainer: oras://quay.io/moniagsa/truvari:1.0 # TODO
+    apptainer: oras://quay.io/moniagsa/truvari:0.1
     conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
   Bcftools-samtools:
     description: "Bcftools v1.22 with Samtools v1.22"
