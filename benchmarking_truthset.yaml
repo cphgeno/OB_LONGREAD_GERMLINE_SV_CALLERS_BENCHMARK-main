@@ -34,63 +34,63 @@ software_backend: apptainer
 software_environments:
   Python:
     description: "Python v.3.12.10"
-    apptainer: ./containers/python/python_3.12.10-numpy_2.2.5-pandas_2.2.3__v0.1__.sif
+    apptainer: oras://quay.io/moniagsa/python:1.0
     conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
   CuteSV:
     description: "CuteSV"
-    apptainer: ./containers/cutesv/cutesv_2.1.3__v2.0__.sif
+    apptainer: oras://quay.io/moniagsa/cutesv:1.0
     conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
   DeBreak:
     description: "DeBreak v.1.2.0"
-    apptainer: oras://quay.io/moniagsa/debreak:3.0
+    apptainer: oras://quay.io/moniagsa/debreak:1.0
     conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
   Delly2:
     description: "Delly2 v1.7.2"
-    apptainer: ./containers/delly2/delly2_1.7.2__v2.0__.sif
+    apptainer: oras://quay.io/moniagsa/delly2:1.0
     conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
   Dysgu:
     description: "Dysgu"
-    apptainer: ./containers/dysgu/dysgu_1.8.7__v3.0__.sif
+    apptainer: oras://quay.io/moniagsa/dysgu:1.0
     conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
   Kled:
     description: "Kled"
-    apptainer: ./containers/kled/kled_1.2.10__v1.3__.sif
+    apptainer: oras://quay.io/moniagsa/kled:1.0
     conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
   PAV:
     description: "PAV"
-    apptainer: ./containers/pav/pav_2.4.6__v1.40__.sif
+    apptainer: oras://quay.io/moniagsa/pav:1.0
     conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
   Sawfish2:
     description: "Sawfish v2.2.1"
-    apptainer: ./containers/sawfish/sawfish_2.2.1__v1.0__.sif
+    apptainer: oras://quay.io/moniagsa/sawfish2:1.0
     conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
   Severus:
     description: "Severus v.1.6.0"
-    apptainer: ./containers/severus/severus_1.6__v1.0__.sif
+    apptainer: oras://quay.io/moniagsa/severus:1.0
     conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
   Sniffles2:
     description: "Sniffles2 v.2.7.1"
-    apptainer: ./containers/sniffles2/sniffles2_2.7.1__v1.3__.sif
+    apptainer: oras://quay.io/moniagsa/sniffles2:1.0
     conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
   SVIM:
     description: "SVIM v2.0.0"
-    apptainer: ./containers/svim/svim_2.0.0__v1.1__.sif
+    apptainer: oras://quay.io/moniagsa/svim:1.0
     conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
   SVision:
     description: "SVision v1.4"
-    apptainer: ./containers/svision/svision_1.4__2.3__.sif
+    apptainer: oras://quay.io/moniagsa/svision:1.0
     conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
   Truvari:
     description: "Truvari v5.3.0"
-    apptainer: ./containers/truvari/truvari_5.3.0_python_3.10_python_3.12__v1.0__.sif
+    apptainer: oras://quay.io/moniagsa/truvari:1.0 # TODO
     conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
   Bcftools-samtools:
     description: "Bcftools v1.22 with Samtools v1.22"
-    apptainer: ./containers/samtools/bcftools_1.22_samtools_1.22-htslib_1.22-python3.12__v2.0__.sif
+    apptainer: oras://quay.io/moniagsa/bcftools-samtools:1.0
     conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
   VGcall:
     description: "VG call v1.68"
-    apptainer: ./containers/vg/vg_1.68.0-py312.sif
+    apptainer: oras://quay.io/moniagsa/vg:1.0
     conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
 
 metric_collectors:
@@ -232,6 +232,76 @@ stages:
         repository:
           url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-dysgu.git
           commit: 79d960b
+        parameters:
+          - values: ["--workflow", "linear"]
+          - values: ["--workflow", "graph"]
+      - id: kled
+        name: "Variant calling with Kled"
+        software_environment: "Kled"
+        repository:
+          url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-kled.git
+          commit: f7f352c
+        parameters:
+          - values: ["--workflow", "linear"]
+          - values: ["--workflow", "graph"]
+      - id: sawfish2
+        name: "Variant calling with Sawfish2"
+        software_environment: "Sawfish2"
+        repository:
+          url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-sawfish2.git
+          commit: 6c34789
+        parameters:
+          - values: ["--workflow", "linear"]
+          - values: ["--workflow", "graph"]
+      - id: severus
+        name: "Variant calling with Severus"
+        software_environment: "Severus"
+        repository:
+          url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-severus.git
+          commit: d5668f6
+        parameters:
+          - values: ["--workflow", "linear"]
+          - values: ["--workflow", "graph"]
+      - id: sniffles2
+        name: "Variant calling with Sniffles2"
+        software_environment: "Sniffles2"
+        repository:
+          url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-sniffles2.git
+          commit: 002fea9
+        parameters:
+          - values: ["--workflow", "linear"]
+          - values: ["--workflow", "graph"]
+      - id: svim
+        name: "Variant calling with SVIM"
+        software_environment: "SVIM"
+        repository:
+          url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-svim.git
+          commit: 8e857a8
+        parameters:
+          - values: ["--workflow", "linear"]
+          - values: ["--workflow", "graph"]
+      - id: PAV
+        name: "Variant calling with PAV"
+        software_environment: "PAV"
+        repository:
+          url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-pav.git
+          commit: 600a361
+        parameters:
+          - values: ["--workflow", "assemblies"] 
+      - id: VGcall
+        name: "Variant calling with VGcall"
+        software_environment: "VGcall"
+        repository:
+          url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-vgcall.git
+          commit: de27f4e
+        parameters:
+          - values: ["--workflow", "gam"] 
+      - id: SVision
+        name: "Variant calling with SVision"
+        software_environment: "SVision"
+        repository:
+          url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-svision.git
+          commit: a0ca46c
         parameters:
           - values: ["--workflow", "linear"]
           - values: ["--workflow", "graph"]
