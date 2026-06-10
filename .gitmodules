@@ -1,0 +1,51 @@
+[submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-bench"]
+	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-bench
+	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-bench.git
+[submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-svision"]
+	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-svision
+	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-svision.git
+[submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-vgcall"]
+	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-vgcall
+	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-vgcall.git
+[submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-pav"]
+	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-pav
+	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-pav.git
+[submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-svim"]
+	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-svim
+	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-svim.git
+[submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-sniffles2"]
+	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-sniffles2
+	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-sniffles2.git
+[submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-severus"]
+	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-severus
+	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-severus.git
+[submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-sawfish2"]
+	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-sawfish2
+	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-sawfish2.git
+[submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-kled"]
+	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-kled
+	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-kled.git
+[submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-dysgu"]
+	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-dysgu
+	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-dysgu.git
+[submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-delly2"]
+	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-delly2
+	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-delly2.git
+[submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-cutesv"]
+	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-cutesv
+	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-cutesv.git
+[submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-debreak"]
+	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-debreak
+	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-debreak.git
+[submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency"]
+	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency
+	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency.git
+[submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes"]
+	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes
+	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes.git
+[submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-vcf-postprocessing"]
+	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-vcf-postprocessing
+	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-vcf-postprocessing.git
+[submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-data-input"]
+	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-data-input
+	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-data-input.git
