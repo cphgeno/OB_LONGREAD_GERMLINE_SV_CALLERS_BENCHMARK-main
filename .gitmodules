@@ -1,6 +1,3 @@
-[submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-bench"]
-	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-bench
-	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-bench.git
 [submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-svision"]
 	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-svision
 	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-svision.git
