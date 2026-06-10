@@ -1,0 +1,1177 @@
+## ------------------------------------------------------------------------------
+## benchmark shortname
+## ------------------------------------------------------------------------------
+id: longread_germline_structural_variant_calling_benchmark
+
+## ------------------------------------------------------------------------------
+## benchmark description
+## ------------------------------------------------------------------------------
+description: Long read germline structural variant calling benchmarking
+
+## ------------------------------------------------------------------------------
+## Benchmark version. `1.0`.
+## ------------------------------------------------------------------------------
+version: 1.0
+
+## ------------------------------------------------------------------------------
+## Benchmark builder/contact person
+## ------------------------------------------------------------------------------
+benchmarker: "Monica Aguila i Sans, monica.aguila.i.sans@regionh.dk"
+
+## ------------------------------------------------------------------------------
+## Benchmark YAML schema/specification version. Currently `0.01`.
+## ------------------------------------------------------------------------------
+benchmark_yaml_spec: 0.01
+
+## ------------------------------------------------------------------------------
+## The software backend used to run the benchmark
+## ------------------------------------------------------------------------------
+software_backend: apptainer
+
+## ------------------------------------------------------------------------------
+## Software environment recipes associated to this benchmark.
+## ------------------------------------------------------------------------------
+software_environments:
+  Python:
+    description: "Python v.3.12.10"
+    # apptainer: oras://quay.io/moniagsa/python:1.0
+    apptainer: ../containers/python_3.12.10-numpy_2.2.5-pandas_2.2.3__v1.0__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  CuteSV:
+    description: "CuteSV"
+    # apptainer: oras://quay.io/moniagsa/cutesv:1.0
+    apptainer: ../containers/cutesv_2.1.3__v1.0__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  DeBreak:
+    description: "DeBreak v.1.2.0"
+    # apptainer: oras://quay.io/moniagsa/debreak:1.0
+    apptainer: ../containers/debreak_1.2__v1.0__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  Delly2:
+    description: "Delly2 v1.7.2"
+    # apptainer: oras://quay.io/moniagsa/delly2:1.0
+    apptainer: ../containers/delly2_1.7.2__v1.0__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  Dysgu:
+    description: "Dysgu"
+    # apptainer: oras://quay.io/moniagsa/dysgu:1.0
+    apptainer: ../containers/dysgu_1.8.7__v2.0__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  Kled:
+    description: "Kled"
+    # apptainer: oras://quay.io/moniagsa/kled:1.0
+    apptainer: ../containers/kled_1.2.10__v1.0__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  PAV:
+    description: "PAV"
+    # apptainer: oras://quay.io/moniagsa/pav:1.0
+    # apptainer: ../containers/pav_2.4.6__v1.0__.sif
+    apptainer: ../containers/pav_2.4.6__v1.40__.sif
+## ------------------------------------------------------------------------------
+## Software environment recipes associated to this benchmark.
+## ------------------------------------------------------------------------------
+software_environments:
+  Python:
+    description: "Python v.3.12.10"
+    # apptainer: oras://quay.io/moniagsa/python:1.0
+    apptainer: ../containers/python_3.12.10-numpy_2.2.5-pandas_2.2.3__v1.0__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  CuteSV:
+    description: "CuteSV"
+    # apptainer: oras://quay.io/moniagsa/cutesv:1.0
+    apptainer: ../containers/cutesv_2.1.3__v1.0__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  DeBreak:
+    description: "DeBreak v.1.2.0"
+    # apptainer: oras://quay.io/moniagsa/debreak:1.0
+    apptainer: ../containers/debreak_1.2__v1.0__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  Delly2:
+    description: "Delly2 v1.7.2"
+    # apptainer: oras://quay.io/moniagsa/delly2:1.0
+    apptainer: ../containers/delly2_1.7.2__v1.0__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  Dysgu:
+    description: "Dysgu"
+    # apptainer: oras://quay.io/moniagsa/dysgu:1.0
+    apptainer: ../containers/dysgu_1.8.7__v2.0__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  Kled:
+    description: "Kled"
+    # apptainer: oras://quay.io/moniagsa/kled:1.0
+    apptainer: ../containers/kled_1.2.10__v1.0__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  PAV:
+    description: "PAV"
+    # apptainer: oras://quay.io/moniagsa/pav:1.0
+    # apptainer: ../containers/pav_2.4.6__v1.0__.sif
+    apptainer: ../containers/pav_2.4.6__v1.40__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  Sawfish2:
+    description: "Sawfish v2.2.1"
+    # apptainer: oras://quay.io/moniagsa/sawfish2:1.0
+    apptainer: ../containers/sawfish_2.2.1__v1.0__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  Severus:
+    description: "Severus v.1.6.0"
+    # apptainer: oras://quay.io/moniagsa/severus:1.0
+    apptainer: ../containers/severus_1.6__v1.0__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  Sniffles2:
+    description: "Sniffles2 v.2.7.1"
+    # apptainer: oras://quay.io/moniagsa/sniffles2:2.0 # TODO: push new updated pydantic
+    apptainer: ../containers/sniffles2_2.7.1__v2.0__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  SVIM:
+    description: "SVIM v2.0.0"
+    # apptainer: oras://quay.io/moniagsa/svim:1.0
+    apptainer: ../containers/svim_2.0.0__v1.0__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  SVision:
+    description: "SVision v1.4"
+    # apptainer: oras://quay.io/moniagsa/svision:3.0 # TODO: push new version with parallel
+    apptainer: ../containers/svision_1.4__v3.0__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  SVisionPro:
+    description: "SVisionPro v2.5"
+    # apptainer: oras://quay.io/moniagsa/svisionpro:1.0
+    apptainer: ../containers/svision-pro_2.5__v1.0__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  VGcall:
+    description: "VG call v1.68"
+    # apptainer: oras://quay.io/moniagsa/vg:1.0
+    apptainer: ../containers/vg_1.68.0-py312.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  SVHunter:
+    description: "SVHunter"
+    # apptainer: oras://quay.io/moniagsa/SVHunter:1.0
+    apptainer: ../containers/svhunter_1.1__v1.0__.sif
+    # apptainer: ../containers/svhunter_1.1__v1.3__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  Truvari01mafft:
+    description: "Truvari v5.3.0 with mafft"
+    # apptainer: oras://quay.io/moniagsa/truvari:0.1 # TODO: update image used in ORAS
+    apptainer: ../containers/truvari_5.3.0_python_3.10_python_3.12_mafft__v1.0__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+  Bcftools-samtools:
+    description: "Bcftools v1.22 with Samtools v1.22"
+    # apptainer: oras://quay.io/moniagsa/bcftools-samtools:1.0
+    apptainer: ../containers/bcftools_1.22_samtools_1.22-htslib_1.22-python3.12__v1.0__.sif
+    conda: ./fake_envs/R.yml  # This is expected to be present, but it can just be an empty file
+
+
+metric_collectors:
+  # TP INS
+  - id: truvari-consistency-ins
+    name: "Truvari-consistency-ins"
+    software_environment: "Truvari01mafft"
+    repository:
+      # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency.git
+      url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency
+      commit: 686f98b
+    inputs:
+      - split-26-types.ins.vcf.gz
+    outputs:
+      - id: truvari-consistency-ins-tp.consistency.flag
+        path: "{input}/truvari_consistency.ins.tp.flag"
+  # TP DEL
+  - id: truvari-consistency-del
+    name: "Truvari-consistency-del"
+    software_environment: "Truvari01mafft"
+    repository:
+      # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency.git
+      url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency
+      commit: 686f98b
+    inputs:
+      - split-26-types.del.vcf.gz
+    outputs:
+      - id: truvari-consistency-del-tp.consistency.flag
+        path: "{input}/truvari_consistency.del.tp.flag"
+  # TP INV
+  - id: truvari-consistency-inv
+    name: "Truvari-consistency-inv"
+    software_environment: "Truvari01mafft"
+    repository:
+      # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency.git
+      url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency
+      commit: 686f98b
+    inputs:
+      - split-26-types.inv.vcf.gz
+    outputs:
+      - id: truvari-consistency-inv-tp.consistency.flag
+        path: "{input}/truvari_consistency.inv.tp.flag"
+
+  # FP INS
+  - id: truvari-consistency-ins-fp
+    name: "Truvari-consistency-ins-fp"
+    software_environment: "Truvari01mafft"
+    repository:
+      # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency.git
+      url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency
+      commit: 686f98b
+    inputs:
+      - split-26-types.ins.fp.vcf.gz
+    outputs:
+      - id: truvari-consistency-ins-fp.consistency.flag
+        path: "{input}/truvari_consistency.ins.fp.flag"
+  # FP DEL
+  - id: truvari-consistency-del-fp
+    name: "Truvari-consistency-del-fp"
+    software_environment: "Truvari01mafft"
+    repository:
+      # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency.git
+      url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency
+      commit: 686f98b
+    inputs:
+      - split-26-types.del.fp.vcf.gz
+    outputs:
+      - id: truvari-consistency-del-fp.consistency.flag
+        path: "{input}/truvari_consistency.del.fp.flag"
+  # FP INV
+  - id: truvari-consistency-inv-fp
+    name: "Truvari-consistency-inv-fp"
+    software_environment: "Truvari01mafft"
+    repository:
+      # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency.git
+      url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency
+      commit: 686f98b
+    inputs:
+      - split-26-types.inv.fp.vcf.gz
+    outputs:
+      - id: truvari-consistency-inv-fp.consistency.flag
+        path: "{input}/truvari_consistency.inv.fp.flag"
+
+  # FN INS
+  - id: truvari-consistency-ins-fn
+    name: "Truvari-consistency-ins-fn"
+    software_environment: "Truvari01mafft"
+    repository:
+      # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency.git
+      url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency
+      commit: 686f98b
+    inputs:
+      - split-26-types.ins.fn.vcf.gz
+    outputs:
+      - id: truvari-consistency-ins-fn.consistency.flag
+        path: "{input}/truvari_consistency.ins.fn.flag"
+  # FN DEL
+  - id: truvari-consistency-del-fn
+    name: "Truvari-consistency-del-fn"
+    software_environment: "Truvari01mafft"
+    repository:
+      # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency.git
+      url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency
+      commit: 686f98b
+    inputs:
+      - split-26-types.del.fn.vcf.gz
+    outputs:
+      - id: truvari-consistency-del-fn.consistency.flag
+        path: "{input}/truvari_consistency.del.fn.flag"
+  # FN INV
+  - id: truvari-consistency-inv-fn
+    name: "Truvari-consistency-inv-fn"
+    software_environment: "Truvari01mafft"
+    repository:
+      # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency.git
+      url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-consistency
+      commit: 686f98b
+    inputs:
+      - split-26-types.inv.fn.vcf.gz
+    outputs:
+      - id: truvari-consistency-inv-fn.consistency.flag
+        path: "{input}/truvari_consistency.inv.fn.flag"
+
+
+stages:
+  - id: data
+    modules:
+      - id: NA12877.minimap2
+        name: "Collect input bams"
+        software_environment: "Python"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-data-input-ont.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-data-input-ont
+          # commit: main
+          commit: main
+      - id: NA12878.minimap2
+        name: "Collect input bams"
+        software_environment: "Python"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-data-input-ont.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-data-input-ont
+          # commit: main
+          commit: main
+      - id: NA12879.minimap2
+        name: "Collect input bams"
+        software_environment: "Python"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-data-input-ont.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-data-input-ont
+          # commit: main
+          commit: main
+      - id: NA12881.minimap2
+        name: "Collect input bams"
+        software_environment: "Python"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-data-input-ont.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-data-input-ont
+          # commit: main
+          commit: main
+      - id: NA12882.minimap2
+        name: "Collect input bams"
+        software_environment: "Python"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-data-input-ont.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-data-input-ont
+          # commit: main
+          commit: main
+      - id: NA12885.minimap2
+        name: "Collect input bams"
+        software_environment: "Python"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-data-input-ont.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-data-input-ont
+          # commit: main
+          commit: main
+      - id: NA12886.minimap2
+        name: "Collect input bams"
+        software_environment: "Python"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-data-input-ont.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-data-input-ont
+          # commit: main
+          commit: main
+    outputs:
+      - id: data.linear.bam
+        path: "{dataset}.linear.bam"
+      - id: data.linear.bam.bai
+        path: "{dataset}.linear.bam.bai"
+      - id: data.graph.bam
+        path: "{dataset}.graph.bam"
+      - id: data.graph.bam.bai
+        path: "{dataset}.graph.bam.bai"
+      - id: data.gam
+        path: "{dataset}.gam"
+      - id: data.asm.hap1
+        path: "{dataset}.asm.bp.hap1.p_ctg.gfa"
+      - id: data.asm.hap2
+        path: "{dataset}.asm.bp.hap2.p_ctg.gfa"
+      - id: data.truthset
+        path: "{dataset}.truthset.vcf.gz"
+      - id: data.truthset.tbi
+        path: "{dataset}.truthset.vcf.gz.tbi"
+      - id: data.reference
+        path: "{dataset}.reference.fasta"
+      - id: data.reference.fai
+        path: "{dataset}.reference.fasta.fai"
+
+  - id: variant_calling
+    modules:
+      - id: cutesv
+        name: "Variant calling with CuteSV"
+        software_environment: "CuteSV"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-cutesv-ont.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-cutesv-ont # updated for ont data
+          # commit: 1d69f4e
+          commit: main
+        parameters:
+          - values: ["--workflow", "linear"]
+          - values: ["--workflow", "graph"]
+      - id: debreak
+        name: "Variant calling with DeBreak"
+        software_environment: "DeBreak"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-debreak.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-debreak # default
+          # commit: 1e9e332
+          commit: main
+        parameters:
+          - values: ["--workflow", "linear"]
+          - values: ["--workflow", "graph"]
+      - id: delly2
+        name: "Variant calling with Delly2"
+        software_environment: "Delly2"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-delly2.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-delly2-ont # updated for ont data
+          # commit: 90cfff6
+          commit: main
+        parameters:
+          - values: ["--workflow", "linear"]
+          - values: ["--workflow", "graph"]
+      - id: dysgu
+        name: "Variant calling with Dysgu"
+        software_environment: "Dysgu"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-dysgu.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-dysgu-ont # updated for ont data
+          # commit: 1578175
+          commit: main
+        parameters:
+          - values: ["--workflow", "linear"]
+          - values: ["--workflow", "graph"]
+      - id: kled
+        name: "Variant calling with Kled"
+        software_environment: "Kled"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-kled-ont.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-kled-ont # updated for ont data
+          # commit: f7f352c
+          commit: main
+        parameters:
+          - values: ["--workflow", "linear"]
+          - values: ["--workflow", "graph"]
+      - id: severus
+        name: "Variant calling with Severus"
+        software_environment: "Severus"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-severus.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-severus # default
+          # commit: d5668f6
+          commit: main
+        parameters:
+          - values: ["--workflow", "linear"]
+          - values: ["--workflow", "graph"]
+      - id: sniffles2
+        name: "Variant calling with Sniffles2"
+        software_environment: "Sniffles2"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-sniffles2.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-sniffles2 # default
+          # commit: 002fea9
+          commit: main
+        parameters:
+          - values: ["--workflow", "linear"]
+          - values: ["--workflow", "graph"]
+      - id: svhunter
+        name: "Variant calling with SVHunter"
+        software_environment: "SVHunter"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-svhunter.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-svhunter # only ONT
+          # commit: bc64a09
+          commit: main
+        parameters:
+          - values: ["--workflow", "linear"]
+          - values: ["--workflow", "graph"]
+      - id: svim
+        name: "Variant calling with SVIM"
+        software_environment: "SVIM"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-svim.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-svim # default
+          # commit: 8e857a8
+          commit: main
+        parameters:
+          - values: ["--workflow", "linear"]
+          - values: ["--workflow", "graph"]
+      - id: PAV
+        name: "Variant calling with PAV"
+        software_environment: "PAV"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-pav.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-pav # default
+          # commit: 600a361 to -> 32e43ca
+          commit: main
+        parameters:
+          - values: ["--workflow", "assemblies"] 
+      - id: VGcall
+        name: "Variant calling with VGcall"
+        software_environment: "VGcall"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-vgcall-ont.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-vgcall-ont # updated for ont data
+          # commit: 9fab810 -> 52a9538 / 773bee7 (vgcall folder in repo)
+          commit: main
+        parameters:
+          - values: ["--workflow", "gam"]
+      - id: SVision
+        name: "Variant calling with SVision"
+        software_environment: "SVision"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-svision-ont.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-svision-ont # updated for ont data
+          # commit: 4085b2a -> 1378492 /  1738dc4 (pacbio) -> for folder in current repo
+          commit: main
+        parameters:
+          - values: ["--workflow", "linear"]
+          - values: ["--workflow", "graph"]
+      - id: SVisionPro
+        name: "Variant calling with SVisionPro"
+        software_environment: "SVisionPro"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-svision-pro-ont.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-variant-calling-svision-pro-ont # updated for ont data
+          # commit: 9d4a7d5
+          commit: main
+        parameters:
+          - values: ["--workflow", "linear"]
+          - values: ["--workflow", "graph"]
+    inputs:
+      - entries:
+        - data.linear.bam
+        - data.linear.bam.bai
+        - data.graph.bam
+        - data.graph.bam.bai
+        - data.gam
+        - data.asm.hap1
+        - data.asm.hap2
+        - data.truthset
+        - data.truthset.tbi
+        - data.reference
+        - data.reference.fai
+    outputs:
+      - id: variant_calling.vcfs
+        path: "{dataset}.vcf"
+
+  - id: vcf-postprocessing
+    modules:
+      - id: Postprocessing
+        name: "Postprocessing"
+        software_environment: "Bcftools-samtools"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-vcf-postprocessing-all.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-vcf-postprocessing-all
+          # commit: 3ba650f -> a4b18ee (new path for kled linear!!) -> 1ddae61 -> 7c49691
+          commit: main
+    inputs:
+      - entries: 
+        - variant_calling.vcfs
+    outputs:
+      - id: variant_calling.vcfs.gz
+        path: "{dataset}.vcf.gz"
+
+  - id: truvari-bench-multiple-params
+    modules:
+      - id: Truvari-bench-multiple-params
+        name: "Truvari bench multiple params"
+        software_environment: "Truvari01mafft"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-bench-multiple-params.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-bench-multiple-params # mutliple params to explore + the original ones "--pctseq 0 --typeignore --passonly"
+          # commit: d8e2cc2 -> 9520bb7 -> cb0a283
+          commit: main
+    inputs:
+      - entries: 
+        - variant_calling.vcfs.gz
+        - data.truthset
+        - data.reference
+    outputs:
+      - id: variant_calling_metrics.1.fp
+        path: "{dataset}.1.fp.vcf.gz"
+      - id: variant_calling_metrics.1.fn
+        path: "{dataset}.1.fn.vcf.gz"
+      - id: variant_calling_metrics.1.tp
+        path: "{dataset}.1.tp-base.vcf.gz"
+      - id: variant_calling_metrics.1.tp.tbi
+        path: "{dataset}.1.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.1.summary
+        path: "{dataset}.1.summary.json"
+
+      - id: variant_calling_metrics.2.fp
+        path: "{dataset}.2.fp.vcf.gz"
+      - id: variant_calling_metrics.2.fn
+        path: "{dataset}.2.fn.vcf.gz"
+      - id: variant_calling_metrics.2.tp
+        path: "{dataset}.2.tp-base.vcf.gz"
+      - id: variant_calling_metrics.2.tp.tbi
+        path: "{dataset}.2.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.2.summary
+        path: "{dataset}.2.summary.json"
+
+      - id: variant_calling_metrics.3.fp
+        path: "{dataset}.3.fp.vcf.gz"
+      - id: variant_calling_metrics.3.fn
+        path: "{dataset}.3.fn.vcf.gz"
+      - id: variant_calling_metrics.3.tp
+        path: "{dataset}.3.tp-base.vcf.gz"
+      - id: variant_calling_metrics.3.tp.tbi
+        path: "{dataset}.3.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.3.summary
+        path: "{dataset}.3.summary.json"
+
+      - id: variant_calling_metrics.4.fp
+        path: "{dataset}.4.fp.vcf.gz"
+      - id: variant_calling_metrics.4.fn
+        path: "{dataset}.4.fn.vcf.gz"
+      - id: variant_calling_metrics.4.tp
+        path: "{dataset}.4.tp-base.vcf.gz"
+      - id: variant_calling_metrics.4.tp.tbi
+        path: "{dataset}.4.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.4.summary
+        path: "{dataset}.4.summary.json"
+
+      - id: variant_calling_metrics.5.fp
+        path: "{dataset}.5.fp.vcf.gz"
+      - id: variant_calling_metrics.5.fn
+        path: "{dataset}.5.fn.vcf.gz"
+      - id: variant_calling_metrics.5.tp
+        path: "{dataset}.5.tp-base.vcf.gz"
+      - id: variant_calling_metrics.5.tp.tbi
+        path: "{dataset}.5.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.5.summary
+        path: "{dataset}.5.summary.json"
+
+      - id: variant_calling_metrics.6.fp
+        path: "{dataset}.6.fp.vcf.gz"
+      - id: variant_calling_metrics.6.fn
+        path: "{dataset}.6.fn.vcf.gz"
+      - id: variant_calling_metrics.6.tp
+        path: "{dataset}.6.tp-base.vcf.gz"
+      - id: variant_calling_metrics.6.tp.tbi
+        path: "{dataset}.6.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.6.summary
+        path: "{dataset}.6.summary.json"
+
+      - id: variant_calling_metrics.7.fp
+        path: "{dataset}.7.fp.vcf.gz"
+      - id: variant_calling_metrics.7.fn
+        path: "{dataset}.7.fn.vcf.gz"
+      - id: variant_calling_metrics.7.tp
+        path: "{dataset}.7.tp-base.vcf.gz"
+      - id: variant_calling_metrics.7.tp.tbi
+        path: "{dataset}.7.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.7.summary
+        path: "{dataset}.7.summary.json"
+
+      - id: variant_calling_metrics.8.fp
+        path: "{dataset}.8.fp.vcf.gz"
+      - id: variant_calling_metrics.8.fn
+        path: "{dataset}.8.fn.vcf.gz"
+      - id: variant_calling_metrics.8.tp
+        path: "{dataset}.8.tp-base.vcf.gz"
+      - id: variant_calling_metrics.8.tp.tbi
+        path: "{dataset}.8.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.8.summary
+        path: "{dataset}.8.summary.json"
+
+      - id: variant_calling_metrics.9.fp
+        path: "{dataset}.9.fp.vcf.gz"
+      - id: variant_calling_metrics.9.fn
+        path: "{dataset}.9.fn.vcf.gz"
+      - id: variant_calling_metrics.9.tp
+        path: "{dataset}.9.tp-base.vcf.gz"
+      - id: variant_calling_metrics.9.tp.tbi
+        path: "{dataset}.9.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.9.summary
+        path: "{dataset}.9.summary.json"
+
+      - id: variant_calling_metrics.10.fp
+        path: "{dataset}.10.fp.vcf.gz"
+      - id: variant_calling_metrics.10.fn
+        path: "{dataset}.10.fn.vcf.gz"
+      - id: variant_calling_metrics.10.tp
+        path: "{dataset}.10.tp-base.vcf.gz"
+      - id: variant_calling_metrics.10.tp.tbi
+        path: "{dataset}.10.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.10.summary
+        path: "{dataset}.10.summary.json"
+
+      - id: variant_calling_metrics.11.fp
+        path: "{dataset}.11.fp.vcf.gz"
+      - id: variant_calling_metrics.11.fn
+        path: "{dataset}.11.fn.vcf.gz"
+      - id: variant_calling_metrics.11.tp
+        path: "{dataset}.11.tp-base.vcf.gz"
+      - id: variant_calling_metrics.11.tp.tbi
+        path: "{dataset}.11.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.11.summary
+        path: "{dataset}.11.summary.json"
+
+      - id: variant_calling_metrics.12.fp
+        path: "{dataset}.12.fp.vcf.gz"
+      - id: variant_calling_metrics.12.fn
+        path: "{dataset}.12.fn.vcf.gz"
+      - id: variant_calling_metrics.12.tp
+        path: "{dataset}.12.tp-base.vcf.gz"
+      - id: variant_calling_metrics.12.tp.tbi
+        path: "{dataset}.12.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.12.summary
+        path: "{dataset}.12.summary.json"
+
+      - id: variant_calling_metrics.13.fp
+        path: "{dataset}.13.fp.vcf.gz"
+      - id: variant_calling_metrics.13.fn
+        path: "{dataset}.13.fn.vcf.gz"
+      - id: variant_calling_metrics.13.tp
+        path: "{dataset}.13.tp-base.vcf.gz"
+      - id: variant_calling_metrics.13.tp.tbi
+        path: "{dataset}.13.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.13.summary
+        path: "{dataset}.13.summary.json"
+
+      - id: variant_calling_metrics.14.fp
+        path: "{dataset}.14.fp.vcf.gz"
+      - id: variant_calling_metrics.14.fn
+        path: "{dataset}.14.fn.vcf.gz"
+      - id: variant_calling_metrics.14.tp
+        path: "{dataset}.14.tp-base.vcf.gz"
+      - id: variant_calling_metrics.14.tp.tbi
+        path: "{dataset}.14.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.14.summary
+        path: "{dataset}.14.summary.json"
+
+      - id: variant_calling_metrics.15.fp
+        path: "{dataset}.15.fp.vcf.gz"
+      - id: variant_calling_metrics.15.fn
+        path: "{dataset}.15.fn.vcf.gz"
+      - id: variant_calling_metrics.15.tp
+        path: "{dataset}.15.tp-base.vcf.gz"
+      - id: variant_calling_metrics.15.tp.tbi
+        path: "{dataset}.15.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.15.summary
+        path: "{dataset}.15.summary.json"
+
+      - id: variant_calling_metrics.16.fp
+        path: "{dataset}.16.fp.vcf.gz"
+      - id: variant_calling_metrics.16.fn
+        path: "{dataset}.16.fn.vcf.gz"
+      - id: variant_calling_metrics.16.tp
+        path: "{dataset}.16.tp-base.vcf.gz"
+      - id: variant_calling_metrics.16.tp.tbi
+        path: "{dataset}.16.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.16.summary
+        path: "{dataset}.16.summary.json"
+
+      - id: variant_calling_metrics.17.fp
+        path: "{dataset}.17.fp.vcf.gz"
+      - id: variant_calling_metrics.17.fn
+        path: "{dataset}.17.fn.vcf.gz"
+      - id: variant_calling_metrics.17.tp
+        path: "{dataset}.17.tp-base.vcf.gz"
+      - id: variant_calling_metrics.17.tp.tbi
+        path: "{dataset}.17.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.17.summary
+        path: "{dataset}.17.summary.json"
+
+      - id: variant_calling_metrics.18.fp
+        path: "{dataset}.18.fp.vcf.gz"
+      - id: variant_calling_metrics.18.fn
+        path: "{dataset}.18.fn.vcf.gz"
+      - id: variant_calling_metrics.18.tp
+        path: "{dataset}.18.tp-base.vcf.gz"
+      - id: variant_calling_metrics.18.tp.tbi
+        path: "{dataset}.18.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.18.summary
+        path: "{dataset}.18.summary.json"
+
+      - id: variant_calling_metrics.19.fp
+        path: "{dataset}.19.fp.vcf.gz"
+      - id: variant_calling_metrics.19.fn
+        path: "{dataset}.19.fn.vcf.gz"
+      - id: variant_calling_metrics.19.tp
+        path: "{dataset}.19.tp-base.vcf.gz"
+      - id: variant_calling_metrics.19.tp.tbi
+        path: "{dataset}.19.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.19.summary
+        path: "{dataset}.19.summary.json"
+
+      - id: variant_calling_metrics.20.fp
+        path: "{dataset}.20.fp.vcf.gz"
+      - id: variant_calling_metrics.20.fn
+        path: "{dataset}.20.fn.vcf.gz"
+      - id: variant_calling_metrics.20.tp
+        path: "{dataset}.20.tp-base.vcf.gz"
+      - id: variant_calling_metrics.20.tp.tbi
+        path: "{dataset}.20.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.20.summary
+        path: "{dataset}.20.summary.json"
+
+      - id: variant_calling_metrics.21.fp
+        path: "{dataset}.21.fp.vcf.gz"
+      - id: variant_calling_metrics.21.fn
+        path: "{dataset}.21.fn.vcf.gz"
+      - id: variant_calling_metrics.21.tp
+        path: "{dataset}.21.tp-base.vcf.gz"
+      - id: variant_calling_metrics.21.tp.tbi
+        path: "{dataset}.21.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.21.summary
+        path: "{dataset}.21.summary.json"
+
+      - id: variant_calling_metrics.22.fp
+        path: "{dataset}.22.fp.vcf.gz"
+      - id: variant_calling_metrics.22.fn
+        path: "{dataset}.22.fn.vcf.gz"
+      - id: variant_calling_metrics.22.tp
+        path: "{dataset}.22.tp-base.vcf.gz"
+      - id: variant_calling_metrics.22.tp.tbi
+        path: "{dataset}.22.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.22.summary
+        path: "{dataset}.22.summary.json"
+
+      - id: variant_calling_metrics.23.fp
+        path: "{dataset}.23.fp.vcf.gz"
+      - id: variant_calling_metrics.23.fn
+        path: "{dataset}.23.fn.vcf.gz"
+      - id: variant_calling_metrics.23.tp
+        path: "{dataset}.23.tp-base.vcf.gz"
+      - id: variant_calling_metrics.23.tp.tbi
+        path: "{dataset}.23.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.23.summary
+        path: "{dataset}.23.summary.json"
+
+      - id: variant_calling_metrics.24.fp
+        path: "{dataset}.24.fp.vcf.gz"
+      - id: variant_calling_metrics.24.fn
+        path: "{dataset}.24.fn.vcf.gz"
+      - id: variant_calling_metrics.24.tp
+        path: "{dataset}.24.tp-base.vcf.gz"
+      - id: variant_calling_metrics.24.tp.tbi
+        path: "{dataset}.24.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.24.summary
+        path: "{dataset}.24.summary.json"
+
+      - id: variant_calling_metrics.25.fp
+        path: "{dataset}.25.fp.vcf.gz"
+      - id: variant_calling_metrics.25.fn
+        path: "{dataset}.25.fn.vcf.gz"
+      - id: variant_calling_metrics.25.tp
+        path: "{dataset}.25.tp-base.vcf.gz"
+      - id: variant_calling_metrics.25.tp.tbi
+        path: "{dataset}.25.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.25.summary
+        path: "{dataset}.25.summary.json"
+
+      - id: variant_calling_metrics.26.fp
+        path: "{dataset}.26.fp.vcf.gz"
+      - id: variant_calling_metrics.26.fn
+        path: "{dataset}.26.fn.vcf.gz"
+      - id: variant_calling_metrics.26.tp
+        path: "{dataset}.26.tp-base.vcf.gz"
+      - id: variant_calling_metrics.26.tp.tbi
+        path: "{dataset}.26.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.26.summary
+        path: "{dataset}.26.summary.json"
+
+
+  # -----------
+  # TP! -> note this are taken from base and not comp!
+  # -----------
+  - id: split-26-types-ins-tp
+    modules:
+      - id: ins-tp-26
+        name: "split-26-types-ins-tp"
+        software_environment: "Bcftools-samtools"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp
+          commit: c5d152c
+        parameters:
+          - values: ["--sv_type", "INS"]
+    inputs:
+      - entries: 
+        - variant_calling_metrics.26.tp
+    outputs:
+      - id: split-26-types.ins.vcf.gz
+        path: "{dataset}.INS.tp.base.vcf.gz"
+
+  - id: split-26-types-inv-tp
+    modules:
+      - id: inv-tp-26
+        name: "split-26-types-inv-tp"
+        software_environment: "Bcftools-samtools"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp
+          commit: c5d152c
+        parameters:
+          - values: ["--sv_type", "INV"]
+    inputs:
+      - entries: 
+        - variant_calling_metrics.26.tp
+    outputs:
+      - id: split-26-types.inv.vcf.gz
+        path: "{dataset}.INV.tp.base.vcf.gz"
+
+  - id: split-26-types-del-tp
+    modules:
+      - id: del-tp-26
+        name: "split-26-types-del-tp"
+        software_environment: "Bcftools-samtools"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp
+          commit: c5d152c
+        parameters:
+          - values: ["--sv_type", "DEL"]
+    inputs:
+      - entries: 
+        - variant_calling_metrics.26.tp
+    outputs:
+      - id: split-26-types.del.vcf.gz
+        path: "{dataset}.DEL.tp.base.vcf.gz"
+
+  # -----------
+  # FP!
+  # -----------
+  - id: split-26-types-ins-fp
+    modules:
+      - id: ins-fp-26
+        name: "split-26-types-ins-fp"
+        software_environment: "Bcftools-samtools"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp
+          commit: c5d152c
+        parameters:
+          - values: ["--sv_type", "INS"]
+    inputs:
+      - entries: 
+        - variant_calling_metrics.26.fp
+    outputs:
+      - id: split-26-types.ins.fp.vcf.gz
+        path: "{dataset}.INS.fp.vcf.gz"
+
+  - id: split-26-types-inv-fp
+    modules:
+      - id: inv-fp-26
+        name: "split-26-types-inv-fp"
+        software_environment: "Bcftools-samtools"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp
+          commit: c5d152c
+        parameters:
+          - values: ["--sv_type", "INV"]
+    inputs:
+      - entries: 
+        - variant_calling_metrics.26.fp
+    outputs:
+      - id: split-26-types.inv.fp.vcf.gz
+        path: "{dataset}.INV.fp.vcf.gz"
+
+  - id: split-26-types-del-fp
+    modules:
+      - id: del-fp-26
+        name: "split-26-types-del-fp"
+        software_environment: "Bcftools-samtools"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp
+          commit: c5d152c
+        parameters:
+          - values: ["--sv_type", "DEL"]
+    inputs:
+      - entries: 
+        - variant_calling_metrics.26.fp
+    outputs:
+      - id: split-26-types.del.fp.vcf.gz
+        path: "{dataset}.DEL.fp.vcf.gz"
+
+  # -----------
+  # FN!
+  # -----------
+  - id: split-26-types-ins-fn
+    modules:
+      - id: ins-fn-26
+        name: "split-26-types-ins-fn"
+        software_environment: "Bcftools-samtools"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp
+          commit: c5d152c
+        parameters:
+          - values: ["--sv_type", "INS"]
+    inputs:
+      - entries: 
+        - variant_calling_metrics.26.fn
+    outputs:
+      - id: split-26-types.ins.fn.vcf.gz
+        path: "{dataset}.INS.fn.vcf.gz"
+
+  - id: split-26-types-inv-fn
+    modules:
+      - id: inv-fn-26
+        name: "split-26-types-inv-fn"
+        software_environment: "Bcftools-samtools"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp
+          commit: c5d152c
+        parameters:
+          - values: ["--sv_type", "INV"]
+    inputs:
+      - entries: 
+        - variant_calling_metrics.26.fn
+    outputs:
+      - id: split-26-types.inv.fn.vcf.gz
+        path: "{dataset}.INV.fn.vcf.gz"
+
+  - id: split-26-types-del-fn
+    modules:
+      - id: del-fn-26
+        name: "split-26-types-del-fn"
+        software_environment: "Bcftools-samtools"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp
+          commit: c5d152c
+        parameters:
+          - values: ["--sv_type", "DEL"]
+    inputs:
+      - entries: 
+        - variant_calling_metrics.26.fn
+    outputs:
+      - id: split-26-types.del.fn.vcf.gz
+        path: "{dataset}.DEL.fn.vcf.gz"
+
+  - id: truvari-bench-refine
+    modules:
+      - id: Truvari-bench-refine
+        name: "Truvari bench refine"
+        software_environment: "Truvari01mafft"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-bench-refine.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-bench-refine # "--passonly" + refine
+          commit: 0bb1269 -> d2d02f7
+    inputs:
+      - entries: 
+        - variant_calling.vcfs.gz
+        - data.truthset
+        - data.reference
+    outputs:
+      - id: variant_calling_metrics.fp
+        path: "{dataset}.fp.vcf.gz"
+      - id: variant_calling_metrics.fp.tbi
+        path: "{dataset}.fp.vcf.gz.tbi"
+  
+      - id: variant_calling_metrics.fn
+        path: "{dataset}.fn.vcf.gz"
+      - id: variant_calling_metrics.fn.tbi
+        path: "{dataset}.fn.vcf.gz.tbi"
+  
+      - id: variant_calling_metrics.tp.base
+        path: "{dataset}.tp-base.vcf.gz"
+      - id: variant_calling_metrics.tp.base.tbi
+        path: "{dataset}.tp-base.vcf.gz.tbi"
+  
+      - id: variant_calling_metrics.tp.comp
+        path: "{dataset}.tp-comp.vcf.gz"
+      - id: variant_calling_metrics.tp.comp.tbi
+        path: "{dataset}.tp-comp.vcf.gz.tbi"
+  
+      - id: variant_calling_metrics.summary
+        path: "{dataset}.summary.json"
+  
+      - id: variant_calling_metrics.params
+        path: "{dataset}.params.json"
+  
+      - id: variant_calling_metrics.log
+        path: "{dataset}.log.txt"
+  
+      - id: variant_calling_metrics.phab.output
+        path: "{dataset}.phab.output.vcf.gz"
+      - id: variant_calling_metrics.phab.output.tbi
+        path: "{dataset}.phab.output.vcf.gz.tbi"
+  
+      - id: variant_calling_metrics.refine.base
+        path: "{dataset}.refine.base.vcf.gz"
+      - id: variant_calling_metrics.refine.base.tbi
+        path: "{dataset}.refine.base.vcf.gz.tbi"
+  
+      - id: variant_calling_metrics.refine.comp
+        path: "{dataset}.refine.comp.vcf.gz"
+      - id: variant_calling_metrics.refine.comp.tbi
+        path: "{dataset}.refine.comp.vcf.gz.tbi"
+  
+      - id: variant_calling_metrics.refine.log
+        path: "{dataset}.refine.log.txt"
+  
+      - id: variant_calling_metrics.refine.regions
+        path: "{dataset}.refine.regions.txt"
+  
+      - id: variant_calling_metrics.refine.region_summary
+        path: "{dataset}.refine.region_summary.json"
+  
+      - id: variant_calling_metrics.refine.variant_summary
+        path: "{dataset}.refine.variant_summary.json"
+  
+      - id: variant_calling_metrics.refine.candidate_bed
+        path: "{dataset}.candidate.refine.bed"
+
+  # 27!
+  - id: truvari-bench-with-ref
+    modules:
+      - id: with-ref
+        name: "Truvari bench with ref"
+        software_environment: "Truvari01mafft"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-bench-with-ref.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-bench-with-ref
+          # commit: d8e2cc2 -> 9520bb7 -> cb0a283 -> af42039 -> b9deaa2 -> 3b88875 -> 1e51423 -> 7758bfd
+          commit: main
+    inputs:
+      - entries: 
+        - variant_calling.vcfs.gz
+        - data.truthset
+        - data.reference
+    outputs:
+      - id: variant_calling_metrics.27.fp
+        path: "{dataset}.27.fp.vcf.gz"
+      - id: variant_calling_metrics.27.fn
+        path: "{dataset}.27.fn.vcf.gz"
+      - id: variant_calling_metrics.27.tp
+        path: "{dataset}.27.tp-base.vcf.gz"
+      - id: variant_calling_metrics.27.tp.tbi
+        path: "{dataset}.27.tp-base.vcf.gz.tbi"
+      - id: variant_calling_metrics.27.summary
+        path: "{dataset}.27.summary.json"
+
+  # -----------
+  # TP! -> note this are taken from base and not comp!
+  # -----------
+  - id: split-27-types-ins-tp
+    modules:
+      - id: ins-tp-27
+        name: "split-27-types-ins-tp"
+        software_environment: "Bcftools-samtools"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp
+          commit: c5d152c
+        parameters:
+          - values: ["--sv_type", "INS"]
+    inputs:
+      - entries: 
+        - variant_calling_metrics.27.tp
+    outputs:
+      - id: split-27-types.ins.vcf.gz
+        path: "{dataset}.INS.tp.base.vcf.gz"
+
+  - id: split-27-types-inv-tp
+    modules:
+      - id: inv-tp-27
+        name: "split-27-types-inv-tp"
+        software_environment: "Bcftools-samtools"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp
+          commit: c5d152c
+        parameters:
+          - values: ["--sv_type", "INV"]
+    inputs:
+      - entries: 
+        - variant_calling_metrics.27.tp
+    outputs:
+      - id: split-27-types.inv.vcf.gz
+        path: "{dataset}.INV.tp.base.vcf.gz"
+
+  - id: split-27-types-del-tp
+    modules:
+      - id: del-tp-27
+        name: "split-27-types-del-tp"
+        software_environment: "Bcftools-samtools"
+        repository:
+          # url: https://github.com/cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp.git
+          url: ./OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-split-svtypes-fp-fn-tp
+          commit: c5d152c
+        parameters:
+          - values: ["--sv_type", "DEL"]
+    inputs:
+      - entries: 
+        - variant_calling_metrics.27.tp
+    outputs:
+      - id: split-27-types.del.vcf.gz
+        path: "{dataset}.DEL.tp.base.vcf.gz"
+
