@@ -46,3 +46,6 @@
 [submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-data-input"]
 	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-data-input
 	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-data-input.git
+[submodule "OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-bench-multiple-params"]
+	path = OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-bench-multiple-params
+	url = git@github.com:cphgeno/OB_LONGREAD_GERMLINE_SV_CALLERS_BENCHMARK-truvari-bench-multiple-params.git
