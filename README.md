@@ -33,3 +33,7 @@ ob run benchmark_truthset_ont.yaml \
 ```
 
 This commands will start a snakemake pipeline that will produce the benchmarking results under the folders ```pacbio_results``` and ```ont_results```.
+
+## Data availablity
+To facilitate reproducibility and enable further benchmarking studies, we have made post-processed VCF files for each variant caller, workflow, and sequencing data type publicly available at: https://doi.org/10.5281/zenodo.20608006.
+
