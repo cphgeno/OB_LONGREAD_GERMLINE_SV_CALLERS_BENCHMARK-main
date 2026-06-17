@@ -78,7 +78,7 @@ Workflow stages are executed within Apptainer/Singularity containers. The corres
 
 ### Variant-calling workflows
 
-Each variant caller stage specifies a workflow type through the `--workflow` parameter. This determines which input files are used from the `input_data` repository.
+Each variant caller stage specifies a workflow type through the `--workflow` parameter. This determines which input files are used from the `input_data` repository as input to each variant caller.
 
 For example:
 
