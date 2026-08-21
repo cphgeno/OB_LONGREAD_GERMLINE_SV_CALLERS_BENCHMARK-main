@@ -114,5 +114,4 @@ The same structure should be applied for running the GIAB CMRG benchmark for Pac
 The workflow definitions are contained in `benchmark_truthset_giab_cmrg.yaml`.
 
 ## Data availablity
-To facilitate reproducibility and enable further benchmarking studies, we have made post-processed VCF files for each variant caller, workflow, and sequencing data type publicly available at: https://doi.org/10.5281/zenodo.20608006.
-
+To facilitate reproducibility and enable further benchmarking studies, we have made post-processed VCF files for each variant caller, workflow, and sequencing data type publicly available at: https://doi.org/10.5281/zenodo.22049154.
